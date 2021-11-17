@@ -4,9 +4,11 @@ import { getAuth,
 import {
   muestraError
 } from "../lib/util.js";
+
 const firestore = getFirestore();
 const daoUsuario = firestore.
   collection("Usuario");
+
 export async function iniciaSesión() {
   /** Tipo de autenticación de
    * usuarios. En este caso es con
@@ -23,7 +25,6 @@ export async function iniciaSesión() {
     { prompt: "select_account" });
   await getAuth().
     signInWithRedirect(provider);
-}
 }
 /** @param {import(
     "../lib/tiposFire.js").User}
