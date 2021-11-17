@@ -26,6 +26,7 @@ export async function iniciaSesión() {
   await getAuth().
     signInWithRedirect(provider);
 }
+}
 /** @param {import(
     "../lib/tiposFire.js").User}
     usuario
