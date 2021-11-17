@@ -1,5 +1,5 @@
-import {
-  getAuth,
+import { 
+getAuth,
   getFirestore
 } from "../lib/fabrica.js";
 import {
@@ -11,12 +11,13 @@ const daoUsuario = firestore.
   collection("Usuario");
 
 export async function 
-iniciaSesión()
+iniciaSesión() {
   /** Tipo de autenticación de
    * usuarios. En este caso es con
    * Google.
    * @type {import(
-   "../lib/tiposFire.js").GoogleAuthProvider} */
+	"../lib/tiposFire.js").
+	GoogleAuthProvider} */
   const provider =
     // @ts-ignore
     new firebase.auth.
@@ -28,6 +29,7 @@ iniciaSesión()
     { prompt: "select_account" });
   await getAuth().
     signInWithRedirect(provider);
+}
 }
 
 /** @param {import(
